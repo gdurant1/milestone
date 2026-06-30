@@ -29,4 +29,12 @@ public class Product {
     public void setInStock(int inStock) { this.inStock = inStock; }
     public void setPrice(double price) { this.price = price; }
 
+    @Override
+    public String toString(){
+        return  "Item Name        : " + this.itemNumber + "\n" +
+                "Item Name        : " + this.name + "\n" +
+                "Quantity in stock: " + this.inStock + "\n" +
+                "Price            : " + this.price + "\n";
+    }
+
 }
