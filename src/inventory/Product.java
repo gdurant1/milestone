@@ -1,8 +1,8 @@
 package inventory;
 public class Product {
     //instance field declarations
-    private static int nextItemNumber = 1;
-    private int itemNumber;//assigns item number
+    private static long nextItemNumber = 1;
+    private long itemNumber;//assigns item number
     private String name;//for unit name
     private String itemType;//to sort by product types
     private int inStock;//keeps track of inventory
@@ -25,7 +25,7 @@ public class Product {
         this.price = price;
         nextItemNumber++; }
     //all getters
-    public int getItemNumber(){ return itemNumber; }
+    public long getItemNumber(){ return itemNumber; }
     public String getName(){ return name; }
     public String getItemType(){ return itemType; }
     public int getInStock(){ return inStock; }
