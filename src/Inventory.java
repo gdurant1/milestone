@@ -19,6 +19,15 @@ public class Inventory {
         this.inStock = inStock;
         this.price = price;
         nextItemNumber++; }
-
+    //all getters
+    public int getItemNumber(){ return itemNumber; }
+    public String getName(){ return name; }
+    public int getInStock(){ return inStock; }
+    public double getPrice(){ return price; }
+    //all setters
+    public void setItemNumber(){ this.itemNumber = nextItemNumber; }
+    public void setName(String name){ this.name = name;}
+    public void setInStock(int inStock) { this.inStock = inStock; }
+    public void setPrice(double price) { this.price = price; }
 
 }
