@@ -1,3 +1,4 @@
+package inventory;
 public class Product {
     private static int nextItemNumber = 1;
     private int itemNumber;//assigns item number
