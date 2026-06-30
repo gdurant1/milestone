@@ -1,19 +1,19 @@
-public class Inventory {
+public class Product {
     private static int nextItemNumber = 1;
-    int itemNumber;//assigns item number
-    String name;//for unit name
-    int inStock;//keeps track of inventory
-    double price;//keeps track of unit price
+    private int itemNumber;//assigns item number
+    private String name;//for unit name
+    private int inStock;//keeps track of inventory
+    private double price;//keeps track of unit price
 
     //default constructor
-    public Inventory(){
+    public Product(){
         this.itemNumber = nextItemNumber;
         this.name = "unkItem"+this.itemNumber;
         this.inStock = 0;
         this.price = 0.0;
         nextItemNumber++; } //increases nextItemNumber
     //constructor with parameters
-    public Inventory(String name, int inStock, double price){
+    public Product(String name, int inStock, double price){
         this.itemNumber = nextItemNumber;
         this.name = name;
         this.inStock = inStock;
@@ -25,7 +25,6 @@ public class Inventory {
     public int getInStock(){ return inStock; }
     public double getPrice(){ return price; }
     //all setters
-    public void setItemNumber(){ this.itemNumber = nextItemNumber; }
     public void setName(String name){ this.name = name;}
     public void setInStock(int inStock) { this.inStock = inStock; }
     public void setPrice(double price) { this.price = price; }
