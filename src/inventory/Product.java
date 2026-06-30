@@ -1,5 +1,6 @@
 package inventory;
 public class Product {
+    //instance field declarations
     private static int nextItemNumber = 1;
     private int itemNumber;//assigns item number
     private String name;//for unit name
@@ -30,11 +31,13 @@ public class Product {
     public int getInStock(){ return inStock; }
     public double getPrice(){ return price; }
     //all setters
+    //itemNumber does not need setter due to it being static
     public void setName(String name){ this.name = name; }
     public void setItemType(String itemType){ this.itemType = itemType; }
     public void setInStock(int inStock) { this.inStock = inStock; }
     public void setPrice(double price) { this.price = price; }
 
+    //toString with override to help print inventory
     @Override
     public String toString(){
         return  "Item Number      : " + this.itemNumber + "\n" +
