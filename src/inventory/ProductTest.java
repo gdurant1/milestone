@@ -20,5 +20,12 @@ public class ProductTest {
         System.out.println(item4);
         System.out.println(item5);
         System.out.println(item6);
+
+        Product backup = item3;
+        backup.setInStock(777);
+
+        System.out.println(backup.getInStock());
+        System.out.println(item3.getInStock());
+        System.out.print(item4.getInStock());
     }
 }
