@@ -10,6 +10,14 @@ public class ProductTest {
         String ogName;
         String ogType;
         int ogInStock;
+        double ogPrice;
+
+        System.out.println("---------- Product Entry Form ----------");
+
+        System.out.println("Product name: ");
+        ogName = in.nextLine();
+
+
 
         //two items using default constructor
         Product item1 = new Product();
