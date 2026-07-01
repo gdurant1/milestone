@@ -51,7 +51,6 @@ public class ProductTest {
         Product item2 = new Product();
 
         //four items using values
-        System.out.println("\n==========Inventory==========");
         Product item3 = new Product("Charizard", "TrainerBox", 12, 85.50);
         Product item4 = new Product("Pikachu", "Plushy", 25, 38.75);
         Product item5 = new Product("Squirtle", "tradingCard", 4, 25.15);

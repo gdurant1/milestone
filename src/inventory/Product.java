@@ -3,6 +3,7 @@ package inventory;
 public class Product {
     //instance field declarations
     private static long nextItemNumber = 1;
+    private boolean active = true;
     private long itemNumber;//assigns item number
     private String name;//for unit name
     private String itemType;//to sort by product types
@@ -12,6 +13,7 @@ public class Product {
     //default constructor
     public Product(){
         this.itemNumber = nextItemNumber;
+        this.active = true;
         this.name = "unkItem"+this.itemNumber;
         this.itemType = "unkType"+this.itemNumber;
         this.inStock = 0;
@@ -21,6 +23,7 @@ public class Product {
     //constructor with parameters
     public Product(String name, String itemType, int inStock, double price){
         this.itemNumber = nextItemNumber;
+        this.active = true;
         this.name = name;
         this.itemType = itemType;
         this.inStock = inStock;
@@ -28,12 +31,14 @@ public class Product {
         nextItemNumber++; }
     //all getters
     public long getItemNumber(){ return itemNumber; }
+    public boolean isActive(){ return active; }
     public String getName(){ return name; }
     public String getItemType(){ return itemType; }
     public int getInStock(){ return inStock; }
     public double getPrice(){ return price; }
     //all setters
     //itemNumber does not need setter due to it being static
+    public void setActive(boolean active){ this.active = active; }
     public void setName(String name){ this.name = name; }
     public void setItemType(String itemType){ this.itemType = itemType; }
     public void setInStock(int inStock) { this.inStock = inStock; }
