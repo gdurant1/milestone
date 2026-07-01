@@ -13,8 +13,10 @@ public class ProductTest {
         int ogInStock;
         double ogPrice;
 
-        System.out.println("Enter product information; \n" + "Type STOP to exit");
+        System.out.println("Enter product information; \nType STOP to exit");
         do {
+            if (in.equalsIgnoreCase("EXIT")){exit=true}
+            else {
             System.out.println("Name: ");
             ogName = in.nextLine();
             System.out.println("Type: ");
@@ -23,6 +25,7 @@ public class ProductTest {
             ogInStock = in.nextInt();
             System.out.println("Price: ");
             ogPrice = in.nextDouble();
+            in.nextLine(); }
         } while (!exit);
 
 
