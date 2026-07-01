@@ -1,7 +1,16 @@
 package inventory;
 
+import java.util.Scanner;
+
 public class ProductTest {
     public static void main(String[] args){
+        Scanner in = new Scanner(System.in); //scanner called in
+
+        //local temp variables
+        String ogName;
+        String ogType;
+        int ogInStock;
+
         //two items using default constructor
         Product item1 = new Product();
         Product item2 = new Product();

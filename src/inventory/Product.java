@@ -1,16 +1,5 @@
-/*
-Durant, Gunnar Michael
-Date 30 June 2026
-Prompt: In ProductTester, each Product variable refers to a Product object stored in memory. Explain the difference between:
-
-    the Product variable itself,
-    and the Product object it refers to.
-
-Then explain why changing one Product object usually does not affect another Product object.
-
-Live Demonstration Required: While recording, create a second Product variable that refers to an existing Product object (for example: Product backup = product1;). Then use a setter through one variable to change the object’s state. Print the object using both variable names and explain why both outputs changed. Finally, compare this to two completely separate Product objects and explain why changing one of those does not affect the other.
- */
 package inventory;
+
 public class Product {
     //instance field declarations
     private static long nextItemNumber = 1;
@@ -28,6 +17,7 @@ public class Product {
         this.inStock = 0;
         this.price = 0.0;
         nextItemNumber++; } //increases nextItemNumber
+
     //constructor with parameters
     public Product(String name, String itemType, int inStock, double price){
         this.itemNumber = nextItemNumber;
