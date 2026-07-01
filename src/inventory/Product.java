@@ -51,7 +51,9 @@ public class Product {
                 "Name             : " + this.name + "\n" +
                 "Product Type     : " + this.itemType + "\n" +
                 "Quantity in stock: " + this.inStock + "\n" +
-                "Price            : " + this.price + "\n";
+                "Price            : " + this.price + "\n" +
+                "Product Status   : " + (this.active ? "Active" : "Discontinued") + "\n";
+        //ternary operator to simplify boolean output
     }
 
 }
