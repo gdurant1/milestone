@@ -14,7 +14,7 @@ public class ProductTest {
         double tempPrice;
 
         //for p1
-        System.out.println("Enter product information; \n");
+        System.out.println("Enter product information; ");
         System.out.println("Name: ");
         tempName = in.nextLine();
         System.out.println("Type: ");
@@ -27,9 +27,10 @@ public class ProductTest {
         Product p1 = new Product(tempName, tempType, tempQty, tempPrice);
         System.out.println("New Item Entered: ");
         System.out.println(p1);
+        in.nextLine();
 
         //for p2
-        System.out.println("Enter product information; \n");
+        System.out.println("Enter product information; ");
         System.out.println("Name: ");
         tempName = in.nextLine();
         System.out.println("Type: ");
@@ -39,11 +40,9 @@ public class ProductTest {
         System.out.println("Price: ");
         tempPrice = in.nextDouble();
         Product p2 = new Product(tempName, tempType, tempQty, tempPrice);
-        in.nextLine();
-        System.out.println(p1);
+        System.out.println(p2);
         //close scanner
         in.close();
-
 
         //two items using default constructor
         System.out.println("\n----------Default----------");
@@ -56,6 +55,8 @@ public class ProductTest {
         Product item5 = new Product("Squirtle", "tradingCard", 4, 25.15);
         Product item6 = new Product("Master Ball", "toy", 3, 45.50);
 
+        item6.setActive(false);
+
         //printout of all items
         System.out.println("---------- Pokemon Inventory System ----------\n"); //flavor text
         System.out.println(item1);
@@ -65,12 +66,12 @@ public class ProductTest {
         System.out.println(item5);
         System.out.println(item6);
 
-        //for prompt demonstration
-        Product backup = item3;
-        backup.setInStock(777);
-
-        System.out.println(backup.getInStock());
-        System.out.println(item3.getInStock());
-        System.out.print(item4.getInStock());
+        //for prompt demonstration  n
+//        Product backup = item3;
+//        backup.setInStock(777);
+//
+//        System.out.println(backup.getInStock());
+//        System.out.println(item3.getInStock());
+//        System.out.print(item4.getInStock());
     }
 }
