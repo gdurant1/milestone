@@ -65,6 +65,7 @@ public class ProductTest {
         System.out.println(item5);
         System.out.println(item6);
 
+        //for prompt demonstration
         Product backup = item3;
         backup.setInStock(777);
 
