@@ -3,7 +3,7 @@ package inventory;
 public class Product {
     //instance field declarations
     private static long nextItemNumber = 1;
-    private boolean active = true;
+    private boolean active = true; //bool for sales
     private long itemNumber;//assigns item number
     private String name;//for unit name
     private String itemType;//to sort by product types
@@ -36,15 +36,18 @@ public class Product {
     public String getItemType(){ return itemType; }
     public int getInStock(){ return inStock; }
     public double getPrice(){ return price; }
+
+    public double getInventoryValue(){
+        return this.price * this.inStock;}
+
     //all setters
-    //itemNumber does not need setter due to it being static
     public void setActive(boolean active){ this.active = active; }
     public void setName(String name){ this.name = name; }
     public void setItemType(String itemType){ this.itemType = itemType; }
     public void setInStock(int inStock) { this.inStock = inStock; }
     public void setPrice(double price) { this.price = price; }
 
-    //toString with override to help print inventory
+    //toString updated, includes getInventory
     @Override
     public String toString(){
         return  "Item Number      : " + this.itemNumber + "\n" +
@@ -52,6 +55,7 @@ public class Product {
                 "Product Type     : " + this.itemType + "\n" +
                 "Quantity in stock: " + this.inStock + "\n" +
                 "Price            : " + this.price + "\n" +
+                "Stock Value      : " + this.getInventoryValue() + "\n" +
                 "Product Status   : " + (this.active ? "Active" : "Discontinued") + "\n";
         //ternary operator to simplify boolean output
     }
