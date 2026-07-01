@@ -8,23 +8,25 @@ public class ProductTest {
         boolean exit = false;
 
         //local temp variables
-        String ogName;
-        String ogType;
-        int ogInStock;
-        double ogPrice;
+        String tempName;
+        String tempType;
+        int tempQty;
+        double tempPrice;
 
         System.out.println("Enter product information; \nType STOP to exit");
         do {
-            if (in.equalsIgnoreCase("EXIT")){exit=true}
+            //create way to exit first
+            System.out.println("Type 'STOP' to exit or Enter Name \nName: ");
+            tempName = in.nextLine();
+            //exit or continue loop
+            if (tempName.equalsIgnoreCase("STOP")){exit=true;}
             else {
-            System.out.println("Name: ");
-            ogName = in.nextLine();
             System.out.println("Type: ");
-            ogType = in.nextLine();
+            tempType = in.nextLine();
             System.out.println("Quantity: ");
-            ogInStock = in.nextInt();
+            tempQty = in.nextInt();
             System.out.println("Price: ");
-            ogPrice = in.nextDouble();
+            tempPrice = in.nextDouble();
             in.nextLine(); }
         } while (!exit);
 
