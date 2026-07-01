@@ -13,30 +13,45 @@ public class ProductTest {
         int tempQty;
         double tempPrice;
 
-        System.out.println("Enter product information; \nType STOP to exit");
-        do {
-            //create way to exit first
-            System.out.println("Type 'STOP' to exit or Enter Name \nName: ");
-            tempName = in.nextLine();
-            //exit or continue loop
-            if (tempName.equalsIgnoreCase("STOP")){exit=true;}
-            else {
-            System.out.println("Type: ");
-            tempType = in.nextLine();
-            System.out.println("Quantity: ");
-            tempQty = in.nextInt();
-            System.out.println("Price: ");
-            tempPrice = in.nextDouble();
-            in.nextLine(); }
-        } while (!exit);
+        //for p1
+        System.out.println("Enter product information; \n");
+        System.out.println("Name: ");
+        tempName = in.nextLine();
+        System.out.println("Type: ");
+        tempType = in.nextLine();
+        System.out.println("Quantity: ");
+        tempQty = in.nextInt();
+        System.out.println("Price: ");
+        tempPrice = in.nextDouble();
+        //create new object, print results
+        Product p1 = new Product(tempName, tempType, tempQty, tempPrice);
+        System.out.println("New Item Entered: ");
+        System.out.println(p1);
 
+        //for p2
+        System.out.println("Enter product information; \n");
+        System.out.println("Name: ");
+        tempName = in.nextLine();
+        System.out.println("Type: ");
+        tempType = in.nextLine();
+        System.out.println("Quantity: ");
+        tempQty = in.nextInt();
+        System.out.println("Price: ");
+        tempPrice = in.nextDouble();
+        Product p2 = new Product(tempName, tempType, tempQty, tempPrice);
+        in.nextLine();
+        System.out.println(p1);
+        //close scanner
+        in.close();
 
 
         //two items using default constructor
+        System.out.println("\n----------Default----------");
         Product item1 = new Product();
         Product item2 = new Product();
 
         //four items using values
+        System.out.println("\n==========Inventory==========");
         Product item3 = new Product("Charizard", "TrainerBox", 12, 85.50);
         Product item4 = new Product("Pikachu", "Plushy", 25, 38.75);
         Product item5 = new Product("Squirtle", "tradingCard", 4, 25.15);
