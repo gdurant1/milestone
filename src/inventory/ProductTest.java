@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class ProductTest {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in); //scanner called in
+        boolean exit = false;
 
         //local temp variables
         String ogName;
@@ -12,10 +13,17 @@ public class ProductTest {
         int ogInStock;
         double ogPrice;
 
-        System.out.println("---------- Product Entry Form ----------");
-
-        System.out.println("Product name: ");
-        ogName = in.nextLine();
+        System.out.println("Enter product information; \n" + "Type STOP to exit");
+        do {
+            System.out.println("Name: ");
+            ogName = in.nextLine();
+            System.out.println("Type: ");
+            ogType = in.nextLine();
+            System.out.println("Quantity: ");
+            ogInStock = in.nextInt();
+            System.out.println("Price: ");
+            ogPrice = in.nextDouble();
+        } while (!exit);
 
 
 
