@@ -24,7 +24,7 @@ public class ProductTest {
         System.out.println("Price: ");
         tempPrice = in.nextDouble();
         //create new object, print results
-        Product p1 = new Product(tempName, tempType, tempQty, tempPrice);
+        Product p1 = new Product(tempName, tempQty, tempPrice);
         System.out.println("New Item Entered: ");
         System.out.println(p1);
         in.nextLine();
@@ -39,7 +39,7 @@ public class ProductTest {
         tempQty = in.nextInt();
         System.out.println("Price: ");
         tempPrice = in.nextDouble();
-        Product p2 = new Product(tempName, tempType, tempQty, tempPrice);
+        Product p2 = new Product(tempName, tempQty, tempPrice);
         System.out.println(p2);
         //close scanner
         in.close();
@@ -50,10 +50,10 @@ public class ProductTest {
         Product item2 = new Product();
 
         //four items using values
-        Product item3 = new Product("Charizard", "TrainerBox", 12, 85.50);
-        Product item4 = new Product("Pikachu", "Plushy", 25, 38.75);
-        Product item5 = new Product("Squirtle", "tradingCard", 4, 25.15);
-        Product item6 = new Product("Master Ball", "toy", 3, 45.50);
+        Product item3 = new Product("Charizard", 12, 85.50);
+        Product item4 = new Product("Pikachu", 25, 38.75);
+        Product item5 = new Product("Squirtle", 4, 25.15);
+        Product item6 = new Product("Master Ball", 3, 45.50);
 
         item6.setActive(false);
 
