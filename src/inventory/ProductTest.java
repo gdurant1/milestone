@@ -1,5 +1,6 @@
 package inventory;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ProductTest {
@@ -14,12 +15,20 @@ public class ProductTest {
         int maxSize; // 2-a creat maxSize variable
 
         do {
-            System.out.println("Enter the number of products you would liketo add\n" +
-                    "Enter 0(zero) if you do not wish to add products: ");
-            maxSize = in.nextInt();
-            if (maxSize < 0 ) {
-                System.out.println("Incorrect Value entered");
+            //add a try block thatsurroundsall code inside while loop
+            try {
+                System.out.println("Enter the number of products you would liketo add\n" +
+                        "Enter 0(zero) if you do not wish to add products: ");
+                maxSize = in.nextInt();
+                if (maxSize < 0) {
+                    System.out.println("Incorrect Value entered\n");
+                }
             }
+            //add catch statment above while, exception e parameter.
+            catch (InputMismatchException e){
+                System.out.println("An unexpected error occurred: " + e);
+                in.nextLine(); // clear out input buffer
+            };
         } while(!(maxSize == 0));
 
         //for p1
