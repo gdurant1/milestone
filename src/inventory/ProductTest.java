@@ -12,14 +12,16 @@ public class ProductTest {
         String tempName;
         int tempQty;
         double tempPrice;
-        int maxSize; // 2-a creat maxSize variable
+        int maxSize = -1; // 2-a creat maxSize variable
 
         do {
-            //add a try block thatsurroundsall code inside while loop
+            //add a try block that surrounds all code inside while loop
             try {
                 System.out.println("Enter the number of products you would liketo add\n" +
                         "Enter 0(zero) if you do not wish to add products: ");
+
                 maxSize = in.nextInt();
+
                 if (maxSize < 0) {
                     System.out.println("Incorrect Value entered\n");
                 }
@@ -28,11 +30,39 @@ public class ProductTest {
             catch (InputMismatchException e){
                 System.out.println("An unexpected error occurred: " + e);
                 in.nextLine(); // clear out input buffer
-            };
-        } while(!(maxSize == 0));
+            }
+        } while(maxSize < 0);
+        in.nextLine(); //clear buffer, just in case
 
+        //if statment for maxSize>0
+        if (maxSize == 0){
+            System.out.println("No products required!");
+        }
+        else {
+            //array to store products
+            Product[] products = new Product[maxSize];
+
+            //loop to collect product info
+            for (int i = 0; i < products.length; i++){
+                System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
+
+                System.out.println("Name: ");
+                tempName = in.nextLine();
+
+                System.out.println("Quantity: ");
+                tempQty = in.nextInt();
+
+                System.out.println("Price: ");
+                tempPrice= in.nextDouble();
+                in.nextLine();//cear buffer
+
+                //initiate and assing objects to array
+                products[i] = new Product(tempName, tempQty, tempPrice);
+            }
+            }
+/*
         //for p1
-        System.out.println("Enter product information; ");
+        System.out.println("++++++++++Enter product information;++++++++++");
         System.out.println("Name: ");
         tempName = in.nextLine();
         System.out.println("Quantity: ");
@@ -44,7 +74,7 @@ public class ProductTest {
         System.out.println("New Item Entered: ");
         System.out.println(p1);
         in.nextLine();
-
+/*
         //for p2
         System.out.println("Enter product information; ");
         System.out.println("Name: ");
@@ -79,7 +109,7 @@ public class ProductTest {
         System.out.println(item4);
         System.out.println(item5);
         System.out.println(item6);
-
+*/
         //for prompt demonstration  n
 //        Product backup = item3;
 //        backup.setInStock(777);
