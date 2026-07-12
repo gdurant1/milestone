@@ -11,6 +11,16 @@ public class ProductTest {
         String tempName;
         int tempQty;
         double tempPrice;
+        int maxSize; // 2-a creat maxSize variable
+
+        do {
+            System.out.println("Enter the number of products you would liketo add\n" +
+                    "Enter 0(zero) if you do not wish to add products: ");
+            maxSize = in.nextInt();
+            if (maxSize < 0 ) {
+                System.out.println("Incorrect Value entered");
+            }
+        } while(!(maxSize == 0));
 
         //for p1
         System.out.println("Enter product information; ");
