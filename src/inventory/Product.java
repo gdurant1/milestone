@@ -1,8 +1,6 @@
 package inventory;
 
 public class Product {
-    //instance field declarations
-    private static long nextSecretId = 1;
     private long secretId;//assigns item number
     private double itemNumber;
     private boolean active = true; //bool for sales
@@ -11,24 +9,23 @@ public class Product {
     private double price;//keeps track of unit price
 
     //default constructor
-    public Product(){
-        this.secretId = nextSecretId;
+    public Product() {
         this.active = true;
         this.name = name;
-        this.itemNumber= itemNumber;
+        this.itemNumber = itemNumber;
         this.inStock = 0;
         this.price = 0.0;
-        nextSecretId++; } //increases nextItemNumber
+    }
+
 
     //constructor with parameters
     public Product(String name, int inStock, double price){
-        this.secretId = nextSecretId;
         this.active = true;
         this.name = name;
         this.itemNumber = itemNumber;
         this.inStock = inStock;
         this.price = price;
-        nextSecretId++; }
+    }
     //all getters
     public long getSecretId(){ return secretId; }
     public boolean isActive(){ return active; }

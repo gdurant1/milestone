@@ -9,7 +9,6 @@ public class ProductTest {
 
         //local temp variables
         String tempName;
-        String tempType;
         int tempQty;
         double tempPrice;
 
@@ -17,8 +16,6 @@ public class ProductTest {
         System.out.println("Enter product information; ");
         System.out.println("Name: ");
         tempName = in.nextLine();
-        System.out.println("Type: ");
-        tempType = in.nextLine();
         System.out.println("Quantity: ");
         tempQty = in.nextInt();
         System.out.println("Price: ");
@@ -33,8 +30,6 @@ public class ProductTest {
         System.out.println("Enter product information; ");
         System.out.println("Name: ");
         tempName = in.nextLine();
-        System.out.println("Type: ");
-        tempType = in.nextLine();
         System.out.println("Quantity: ");
         tempQty = in.nextInt();
         System.out.println("Price: ");
