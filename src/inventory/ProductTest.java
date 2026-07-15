@@ -38,10 +38,11 @@ public class ProductTest {
                 in.nextLine(); } // e-e add line to clear input buffer}
         } while(maxSize < 0);
 
-        //if statment for maxSize>0
+        // 4-a if statement to display text if maxSize is 0
         if (maxSize == 0){
             System.out.println("No products required!");
         }
+        //4-b add else statement for other values
         else {
             // 4-b array to store products
             Product[] products = new Product[maxSize];
@@ -52,6 +53,7 @@ public class ProductTest {
 
                 System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
 
+                // 5-c copy code used to get input from user into loop
                 System.out.println("Name: ");
                 tempName = in.nextLine();
 
@@ -63,9 +65,8 @@ public class ProductTest {
 
                 System.out.println("Price: ");
                 tempPrice= in.nextDouble();
-                in.nextLine();//cear buffer
 
-                //initiate and assing objects to array
+                // 5-d initiate  and assign object to array
                 products[i] = new Product(tempName, tempNumber, tempQty, tempPrice);
             }
 
