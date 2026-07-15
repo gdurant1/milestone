@@ -1,7 +1,7 @@
 package inventory;
 
 public class Product {
-    private int itemNumber;
+    private int itemNumber; //user assigned item number
     private boolean active = true; //bool for sales
     private String name;//for unit name
     private int inStock;//keeps track of inventory
@@ -15,7 +15,6 @@ public class Product {
         this.inStock = inStock;
         this.price = price;
     }
-
 
     //constructor with parameters
     public Product(String name, int itemNumber, int inStock, double price){

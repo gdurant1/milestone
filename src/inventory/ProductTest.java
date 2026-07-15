@@ -10,14 +10,17 @@ public class ProductTest {
 
         //local temp variables
         String tempName;
+        int tempNumber;
         int tempQty;
         double tempPrice;
-        int maxSize = -1; // 2-a creat maxSize variable
+        int maxSize = -1; // 2-a creat maxSize variable, 3-c
 
+        // 2-c add do while loop
         do {
             //add a try block that surrounds all code inside while loop
             try {
-                System.out.println("Enter the number of products you would liketo add\n" +
+                // 2-b prompt at start of main to instruct user
+                System.out.println("Enter the number of products you would like to add\n" +
                         "Enter 0(zero) if you do not wish to add products: ");
 
                 maxSize = in.nextInt();
@@ -26,28 +29,34 @@ public class ProductTest {
                     System.out.println("Incorrect Value entered\n");
                 }
             }
-            //add catch statment above while, exception e parameter.
+            // 3-a add catch statement above while, exception e parameter.
             catch (InputMismatchException e){
-                System.out.println("An unexpected error occurred: " + e);
-                in.nextLine(); // clear out input buffer
-            }
+                System.out.println("Incorrect data type entered!\n");
+                in.nextLine(); } // 3-e add line to clear input buffer
+            catch (Exception e){
+                System.out.println("An unexpected error occurred: " + e + "\n");
+                in.nextLine(); } // e-e add line to clear input buffer}
         } while(maxSize < 0);
-        in.nextLine(); //clear buffer, just in case
 
         //if statment for maxSize>0
         if (maxSize == 0){
             System.out.println("No products required!");
         }
         else {
-            //array to store products
+            // 4-b array to store products
             Product[] products = new Product[maxSize];
 
-            //loop to collect product info
+            // 5-a loop to collect product info
             for (int i = 0; i < products.length; i++){
+                in.nextLine(); // 5-b clear buffer,
+
                 System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
 
                 System.out.println("Name: ");
                 tempName = in.nextLine();
+
+                System.out.println("Item Number: ");
+                tempNumber = in.nextInt();
 
                 System.out.println("Quantity: ");
                 tempQty = in.nextInt();
@@ -57,65 +66,15 @@ public class ProductTest {
                 in.nextLine();//cear buffer
 
                 //initiate and assing objects to array
-                products[i] = new Product(tempName, tempQty, tempPrice);
+                products[i] = new Product(tempName, tempNumber, tempQty, tempPrice);
             }
+
+            // 6 loop to display information
+            System.out.println("\n========== Inventory Added ==========");
+            for (int i = 0; i < products.length; i++){
+                System.out.println(products[i]);}
             }
-/*
-        //for p1
-        System.out.println("++++++++++Enter product information;++++++++++");
-        System.out.println("Name: ");
-        tempName = in.nextLine();
-        System.out.println("Quantity: ");
-        tempQty = in.nextInt();
-        System.out.println("Price: ");
-        tempPrice = in.nextDouble();
-        //create new object, print results
-        Product p1 = new Product(tempName, tempQty, tempPrice);
-        System.out.println("New Item Entered: ");
-        System.out.println(p1);
-        in.nextLine();
-/*
-        //for p2
-        System.out.println("Enter product information; ");
-        System.out.println("Name: ");
-        tempName = in.nextLine();
-        System.out.println("Quantity: ");
-        tempQty = in.nextInt();
-        System.out.println("Price: ");
-        tempPrice = in.nextDouble();
-        Product p2 = new Product(tempName, tempQty, tempPrice);
-        System.out.println(p2);
-        //close scanner
-        in.close();
 
-        //two items using default constructor
-        System.out.println("\n----------Default----------");
-        Product item1 = new Product();
-        Product item2 = new Product();
-
-        //four items using values
-        Product item3 = new Product("Charizard", 12, 85.50);
-        Product item4 = new Product("Pikachu", 25, 38.75);
-        Product item5 = new Product("Squirtle", 4, 25.15);
-        Product item6 = new Product("Master Ball", 3, 45.50);
-
-        item6.setActive(false);
-
-        //printout of all items
-        System.out.println("---------- Pokemon Inventory System ----------\n"); //flavor text
-        System.out.println(item1);
-        System.out.println(item2);
-        System.out.println(item3);
-        System.out.println(item4);
-        System.out.println(item5);
-        System.out.println(item6);
-*/
-        //for prompt demonstration  n
-//        Product backup = item3;
-//        backup.setInStock(777);
-//
-//        System.out.println(backup.getInStock());
-//        System.out.println(item3.getInStock());
-//        System.out.print(item4.getInStock());
+        in.close(); //close scanner
     }
 }
