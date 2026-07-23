@@ -1,4 +1,13 @@
+/*
+Student Name: Durant Gunnar MIchael
+Date: 15 July 2026
+Assigned Prompt: Walk through the do-while loop that collects the maxSize value from the user. Explain why a do-while loop is used here instead of a regular while loop. Show the exact condition on the while clause and explain why the initial value of maxSize matters for that condition.
+
+Live Demonstration Required: Run the program live and enter -3 to show the error message. Then, without restarting, enter a letter to show the exception handling. Then enter a valid number to show full recovery. As you go, explain what the loop condition is evaluating at each re-entry point.
+ */
 package inventory;
+
+import inventory.Product;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -68,6 +77,8 @@ public class ProductTest {
 
                 // 5-d initiate  and assign object to array
                 products[i] = new Product(tempName, tempNumber, tempQty, tempPrice);
+                //got a can't resolve/unkown name error here.  used ai to explain error, and causes.
+                // noticed variables needed and sent were not matching up.
             }
 
             // 6 loop to display information
