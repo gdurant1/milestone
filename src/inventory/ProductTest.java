@@ -78,7 +78,7 @@ public class ProductTest {
                 // 5-d initiate  and assign object to array
                 products[i] = new Product(tempName, tempNumber, tempQty, tempPrice);
                 //got a can't resolve/unkown name error here.  used ai to explain error, and causes.
-                // noticed variables needed and sent were not matching up.
+                // noticed variables needed and sent from constructor were not matching up.
             }
 
             // 6 loop to display information
