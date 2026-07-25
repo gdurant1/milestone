@@ -41,6 +41,20 @@ public class Product {
     public void setInStock(int inStock) { this.inStock = inStock; }
     public void setPrice(double price) { this.price = price; }
 
+    // JP 4 #3 number 3
+    public void addToInventory(int quantity){
+        if(quantity > 0) {
+            this.inStock += quantity;
+        }
+    }
+
+    // JP 4 #3 number 2
+    public void duductFromInventory(int quantity){
+        if (quantity > 0 && this.inStock >= quantity){
+            this.inStock -= quantity;
+        }
+    }
+
     //toString updated, includes getInventory
     @Override
     public String toString(){
