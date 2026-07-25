@@ -1,10 +1,3 @@
-/*
-Student Name: Durant Gunnar MIchael
-Date: 15 July 2026
-Assigned Prompt: Walk through the do-while loop that collects the maxSize value from the user. Explain why a do-while loop is used here instead of a regular while loop. Show the exact condition on the while clause and explain why the initial value of maxSize matters for that condition.
-
-Live Demonstration Required: Run the program live and enter -3 to show the error message. Then, without restarting, enter a letter to show the exception handling. Then enter a valid number to show full recovery. As you go, explain what the loop condition is evaluating at each re-entry point.
- */
 package inventory;
 
 import inventory.Product;
@@ -81,12 +74,21 @@ public class ProductTest {
                 // noticed variables needed and sent from constructor were not matching up.
             }
 
+            displayInventory(products);
+
             // 6 loop to display information
-            System.out.println("\n========== Inventory Added ==========");
-            for (int i = 0; i < products.length; i++){
-                System.out.println(products[i]);}
+//            System.out.println("\n========== Inventory Added ==========");
+//            for (int i = 0; i < products.length; i++){
+//                System.out.println(products[i]);}
             }
 
         in.close(); //close scanner
+    }
+    // JP 2a create static method called displayInventory
+    public static void displayInventory(Product[] products){
+        System.out.println("\n========== Inventory Added ==========");
+        for (int i = 0; i < products.length; i++){
+            System.out.println(products[i]);
+        }
     }
 }
