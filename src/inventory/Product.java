@@ -31,15 +31,15 @@ public class Product {
     public int getInStock(){ return inStock; }
     public double getPrice(){ return price; }
 
-    public double getInventoryValue(){
-        return this.price * this.inStock;}
-
     //all setters
     public void setActive(boolean active){ this.active = active; }
     public void setName(String name){ this.name = name; }
     public void setItemNumber(int itemNumber){ this.itemNumber = itemNumber; }
     public void setInStock(int inStock) { this.inStock = inStock; }
     public void setPrice(double price) { this.price = price; }
+
+    public double getInventoryValue(){
+        return this.price * this.inStock;}
 
     // JP 4 #3 number 3
     public void addToInventory(int quantity){
