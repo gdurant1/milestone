@@ -146,4 +146,27 @@ public class ProductTest {
         } while (menuChoice < 0 || menuChoice >4 );
         return menuChoice;
     }
+     // JP 4-b. create methode to display index value of array and name of products
+    public static int getProductNumber(Product[] products, Scanner in){
+        int productChoice = -1;
+
+        do{
+            try {
+                System.out.println("\n----- Select a Product -----");
+                for (int i=0; i < products.length; i++) {
+                    System.out.print("Enter Product number: ");
+                    productChoice = in.nextInt();
+
+                    if (productChoice < 0 || productChoice >= products.length)
+                        System.out.println("Incorrect Value: Enter number between 0 and " + (products.length) + "\n"); }
+
+            }catch (InputMismatchException e){
+                System.out.println("Incorrect data type entered!\n");
+                in.nextLine(); }
+            catch (Exception e){
+                System.out.println("An unexpected error occurred: " + e + "\n");
+                in.nextLine(); }
+        } while (productChoice < 0 || productChoice >= products.length);
+        return  productChoice;
+    }
 }
