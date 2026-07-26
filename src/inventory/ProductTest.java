@@ -121,7 +121,6 @@ public class ProductTest {
     }
 
     // JP 4-a  display menue system with options
-
     public static int getMenuOption(Scanner in){
         int menuChoice = -1;
 
@@ -171,7 +170,7 @@ public class ProductTest {
         return  productChoice;
     }
 
-    // JP 4-c: create methode that adds stock value to each identified product
+    // JP 4-c create methode to add stock value
     public static void addInventory(Product[] products, Scanner in){
         int productChoice;
         int updateValue =-1;
@@ -184,7 +183,7 @@ public class ProductTest {
                 updateValue = in.nextInt();
 
                 if (updateValue < 0) {
-                    System.out.println("Error: You must enter a positive value of 0 or above.\n");
+                    System.out.println("Incorrect Value: Enter number between 0 or greater.\n");
                 }
             } catch (InputMismatchException e){
                 System.out.println("Incorrect data type entered!\n");
@@ -196,6 +195,43 @@ public class ProductTest {
 
         products[productChoice].addToInventory(updateValue);
         System.out.println("Stock updated successfully.");
+    }
+
+    // JP 4-d Deduct stock values from an identified product
+    public static void deductInventory(Product[] products, Scanner in) {
+        int productChoice;
+        int updateValue = -1;
+
+        productChoice = getProductNumber(products, in);
+
+        do {
+            try {
+                System.out.print("How many products do you want to deduct? ");
+                updateValue = in.nextInt();
+
+                if (updateValue < 0 || updateValue > products[productChoice].getQtyInStock()) {
+                    System.out.println("Incorrect Value: Enter number between 0 and (" + products[productChoice].getQtyInStock() + ").\n");
+                }
+            } catch (InputMismatchException e){
+                System.out.println("Incorrect data type entered!\n");
+                in.nextLine(); }
+            catch (Exception e){
+                System.out.println("An unexpected error occurred: " + e + "\n");
+                in.nextLine(); }
+        } while (updateValue < 0 || updateValue > products[productChoice].getQtyInStock());
+
+        products[productChoice].duductFromInventory(updateValue);
+        System.out.println("Stock deducted successfully.");
+    }
+
+    // JP 4-e implement ability to mark stock as discontinued
+    public static void discontinueInventory(Product[] products, Scanner in) {
+        int productChoice;
+
+        productChoice = getProductNumber(products, in);
+
+        products[productChoice].setActive(false);
+        System.out.println("Product has been discontinued.");
     }
 
 }
