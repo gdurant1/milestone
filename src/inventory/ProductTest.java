@@ -37,9 +37,6 @@ public class ProductTest {
             // JP 4 #2-c replace removed code with method called displayInventory
             displayInventory(products);
 
-            // JP 4 #2-c
-            displayInventory(products);
-
             // 6 loop to display information
 //            System.out.println("\n========== Inventory Added ==========");
 //            for (int i = 0; i < products.length; i++){
@@ -120,5 +117,33 @@ public class ProductTest {
             //got a can't resolve/unkown name error here.  used ai to explain error, and causes.
             // noticed variables needed and sent from constructor were not matching up.
         }
+    }
+
+    // JP 4-a  display menue system with options
+
+    public static int getMenuOption(Scanner in){
+        int menuChoice = -1;
+
+        do{
+            try {
+                System.out.println("\n1. View Inventory");
+                System.out.println("2. Add Stock");
+                System.out.println("3. Deduct Stock");
+                System.out.println("4. Discontinue Product");
+                System.out.println("0. Exit");
+                System.out.println("Enter Menue option: ");
+
+                menuChoice = in.nextInt();
+
+                if(menuChoice < 0 || menuChoice > 4){
+                    System.out.println("Incorrect Value entered\n"); }
+            } catch (InputMismatchException e){
+                System.out.println("Incorrect data type entered!\n");
+                in.nextLine(); }
+            catch (Exception e){
+                System.out.println("An unexpected error occurred: " + e + "\n");
+                in.nextLine(); }
+        } while (menuChoice < 0 || menuChoice >4 );
+        return menuChoice;
     }
 }
