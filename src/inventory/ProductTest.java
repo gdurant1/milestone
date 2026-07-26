@@ -77,6 +77,7 @@ public class ProductTest {
 
     // JP 4 #2-a create static method called displayInventory
     public static void displayInventory(Product[] products){
+        //had error on line 79. "cannot resolve symbol products" asked what would cause error
         System.out.println("\n========== Inventory Added ==========");
         for (int i = 0; i < products.length; i++){
             System.out.println(products[i]);
@@ -169,4 +170,32 @@ public class ProductTest {
         } while (productChoice < 0 || productChoice >= products.length);
         return  productChoice;
     }
+
+    // JP 4-c: create methode that adds stock value to each identified product
+    public static void addInventory(Product[] products, Scanner in){
+        int productChoice;
+        int updateValue =-1;
+
+        productChoice = getProductNumber(products, in);
+
+        do{
+            try{
+                System.out.print("How many products do you want to add? ");
+                updateValue = in.nextInt();
+
+                if (updateValue < 0) {
+                    System.out.println("Error: You must enter a positive value of 0 or above.\n");
+                }
+            } catch (InputMismatchException e){
+                System.out.println("Incorrect data type entered!\n");
+                in.nextLine(); }
+            catch (Exception e){
+                System.out.println("An unexpected error occurred: " + e + "\n");
+                in.nextLine(); }
+        } while (updateValue < 0);
+
+        products[productChoice].addToInventory(updateValue);
+        System.out.println("Stock updated successfully.");
+    }
+
 }
