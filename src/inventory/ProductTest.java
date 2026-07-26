@@ -7,19 +7,12 @@ import java.util.Scanner;
 
 public class ProductTest {
     public static void main(String[] args){
-        Scanner in = new Scanner(System.in); //scanner called in
+        Scanner in = new Scanner(System.in); //Scanner object for keyboard input
+        int maxSize, menuChoice;
         boolean exit = false;
 
-        //local temp variables
-        //String tempName;
-        //int tempNumber;
-        //int tempQty;
-        //double tempPrice;
 
-        // JP 4 #2-j remove initial value of -1
-        int maxSize; // 2-a creat maxSize variable, 3-c
-
-        // JP 4 #2-j call getNumProducts and asign to maxSize
+        // JP 4 #2-j remove initial value of -1, call getNumProducts and asign to maxSize
         maxSize = getNumProducts(in);
 
         // 4-a if statement to display text if maxSize is 0
@@ -33,18 +26,18 @@ public class ProductTest {
 
             // JP 4 # 2-h add method call where code was removed
             addToInventory(products, in);
+            do{
+                menuChoice = getMenuOption(in);
+                executeMenuChoice(menuChoice, products, in);
+            } while (menuChoice !=0);
 
             // JP 4 #2-c replace removed code with method called displayInventory
             displayInventory(products);
 
-            // 6 loop to display information
-//            System.out.println("\n========== Inventory Added ==========");
-//            for (int i = 0; i < products.length; i++){
-//                System.out.println(products[i]);}
-            }
+            } //endiv
 
         in.close(); //close scanner
-    }
+    } //end method main
 
     // JP 4 #2-j create static method called getNumProducts
     public static int getNumProducts(Scanner in){
@@ -234,4 +227,22 @@ public class ProductTest {
         System.out.println("Product has been discontinued.");
     }
 
+    // JP 4-f create methode to combine everything together
+    public static void executeMenuChoice(int menuChoice, Product[] products, Scanner in) {
+        if (menuChoice == 1) {
+            System.out.println("\nView Product List");
+            displayInventory(products);
+        } else if (menuChoice == 2) {
+            System.out.println("\nAdd Stock");
+            addInventory(products, in);
+        } else if (menuChoice == 3) {
+            System.out.println("\nDeduct Stock");
+            deductInventory(products, in);
+        } else if (menuChoice == 4) {
+            System.out.println("\nDiscontinue Stock");
+            discontinueInventory(products, in);
+        } else {
+            System.out.println("Invalid choice.");
+        }
+    }
 }
