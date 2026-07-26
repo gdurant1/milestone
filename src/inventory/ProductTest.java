@@ -70,7 +70,7 @@ public class ProductTest {
 
     // JP 4 #2-a create static method called displayInventory
     public static void displayInventory(Product[] products){
-        //had error on line 79. "cannot resolve symbol products" asked what would cause error
+        //had error "cannot resolve symbol products" couldn't find solution. put line 72 into ai showed "," that I didn't notice.
         System.out.println("\n========== Inventory Added ==========");
         for (int i = 0; i < products.length; i++){
             System.out.println(products[i]);
@@ -79,7 +79,6 @@ public class ProductTest {
 
     //JP 4 #2-e creat static method call addToInventory
     public static void addToInventory(Product[] products, Scanner in){
-
         // JP 4 #2-g move local variables
         String tempName;
         int tempNumber;
@@ -113,7 +112,7 @@ public class ProductTest {
         }
     }
 
-    // JP 4-a  display menue system with options
+    // JP 4-a  display menu system with options
     public static int getMenuOption(Scanner in){
         int menuChoice = -1;
 
