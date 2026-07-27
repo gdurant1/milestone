@@ -9,54 +9,38 @@ public class ProductTest {
         int maxSize, menuChoice;
         boolean exit = false;
 
-
-        // JP 4 #2-j remove initial value of -1, call getNumProducts and asign to maxSize
         maxSize = getNumProducts(in);
 
-        // 4-a if statement to display text if maxSize is 0
         if (maxSize == 0){
-            System.out.println("No products required!");
-        }
-        //4-b add else statement for other values
+            System.out.println("No products required!");}
         else {
-            // 4-b array to store products
             Product[] products = new Product[maxSize];
-
-            // JP 4 # 2-h add method call where code was removed
             addToInventory(products, in);
             do{
                 menuChoice = getMenuOption(in);
                 executeMenuChoice(menuChoice, products, in);
             } while (menuChoice !=0);
 
-            // JP 4 #2-c replace removed code with method called displayInventory
             displayInventory(products);
 
-            } //endiv
+            }
 
-        in.close(); //close scanner
+        in.close();
     } //end method main
 
-    // JP 4 #2-j create static method called getNumProducts
     public static int getNumProducts(Scanner in){
         int maxSize = -1;
 
-        // 2-c add do while loop
         do {
-            //add a try block that surrounds all code inside while loop
             try {
-                // 2-b prompt at start of main to instruct user
                 System.out.println("Enter the number of products you would like to add\n" +
                         "Enter 0(zero) if you do not wish to add products: ");
 
                 maxSize = in.nextInt();
 
                 if (maxSize < 0) {
-                    System.out.println("Incorrect Value entered\n");
-                }
-            }
-            // 3-a add catch statement above while, exception e parameter.
-            catch (InputMismatchException e){
+                    System.out.println("Incorrect Value entered\n"); }
+            } catch (InputMismatchException e){
                 System.out.println("Incorrect data type entered!\n");
                 in.nextLine(); } // 3-e add line to clear input buffer
             catch (Exception e){
@@ -66,31 +50,23 @@ public class ProductTest {
         return maxSize;
     }
 
-    // JP 4 #2-a create static method called displayInventory
     public static void displayInventory(Product[] products){
-        //had error "cannot resolve symbol products" couldn't find solution. put line 72 into ai showed "," that I didn't notice.
         System.out.println("\n========== Inventory Added ==========");
         for (int i = 0; i < products.length; i++){
-            System.out.println(products[i]);
-        }
+            System.out.println(products[i]); }
     }
 
-    //JP 4 #2-e creat static method call addToInventory
     public static void addToInventory(Product[] products, Scanner in){
-        // JP 4 #2-g move local variables
         String tempName;
         int tempNumber;
         int tempQty;
         double tempPrice;
 
-        //JP 4 #2-f move code from main into addToInventory
-        // 5-a loop to collect product info
         for (int i = 0; i < products.length; i++){
             in.nextLine(); // 5-b clear buffer,
 
             System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
 
-            // 5-c copy code used to get input from user into loop
             System.out.println("Name: ");
             tempName = in.nextLine();
 
@@ -103,14 +79,10 @@ public class ProductTest {
             System.out.println("Price: ");
             tempPrice= in.nextDouble();
 
-            // 5-d initiate  and assign object to array
             products[i] = new Product(tempName, tempNumber, tempQty, tempPrice);
-            //got a can't resolve/unkown name error here.  used ai to explain error, and causes.
-            // noticed variables needed and sent from constructor were not matching up.
         }
     }
 
-    // JP 4-a  display menu system with options
     public static int getMenuOption(Scanner in){
         int menuChoice = -1;
 
@@ -136,7 +108,7 @@ public class ProductTest {
         } while (menuChoice < 0 || menuChoice >4 );
         return menuChoice;
     }
-     // JP 4-b. create methode to display index value of array and name of products
+
     public static int getProductNumber(Product[] products, Scanner in){
         int productChoice = -1;
 
@@ -160,7 +132,6 @@ public class ProductTest {
         return  productChoice;
     }
 
-    // JP 4-c create methode to add stock value
     public static void addInventory(Product[] products, Scanner in){
         int productChoice;
         int updateValue =-1;
@@ -187,7 +158,6 @@ public class ProductTest {
         System.out.println("Stock updated successfully.");
     }
 
-    // JP 4-d Deduct stock values from an identified product
     public static void deductInventory(Product[] products, Scanner in) {
         int productChoice;
         int updateValue = -1;
@@ -214,7 +184,6 @@ public class ProductTest {
         System.out.println("Stock deducted successfully.");
     }
 
-    // JP 4-e implement ability to mark stock as discontinued
     public static void discontinueInventory(Product[] products, Scanner in) {
         int productChoice;
 
@@ -224,7 +193,6 @@ public class ProductTest {
         System.out.println("Product has been discontinued.");
     }
 
-    // JP 4-f create methode to combine everything together
     public static void executeMenuChoice(int menuChoice, Product[] products, Scanner in) {
         if (menuChoice == 1) {
             System.out.println("\nView Product List");
