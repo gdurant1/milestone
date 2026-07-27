@@ -225,6 +225,12 @@ public class ProductTest {
 
         productChoice = getProductNumber(products, in);
 
+        // 8 prevent adding to discontinued product
+        if (!products[productChoice].isStatus()){
+            System.out.println("Cannot add to discontinued product");
+            return;
+        }
+
         do{
             try{
                 System.out.print("How many products do you want to add? ");
