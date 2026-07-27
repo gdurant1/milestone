@@ -22,8 +22,16 @@ public class DVD extends Product {
     public String getFilmStudio(){ return filmStudio; }
 
     // 2-c create setters
-    public void setLengthMinutes(){}
-    public void setAgeRating(){}
-    public void setFilmStudio(){}
-    
+    public void setLengthMinutes(int lengthMinutes){
+        this.lengthMinutes = lengthMinutes; }
+    public void setAgeRating(int ageRating){
+        this.ageRating = ageRating; }
+    public void setFilmStudio(String filmStudio) {
+        this.filmStudio = filmStudio; }
+
+    // #3 override methode to calculate value of inventory
+    @Override
+    public double getInventoryValue(){
+        return super.getInventoryValue() * 1.05;
+    }
 }
