@@ -9,27 +9,27 @@ public class Product {
 
     //default constructor
     public Product() {
-        this.status = true;
-        this.name = name;
         this.itemNumber = itemNumber;
+        this.name = name;
         this.QtyInStock = QtyInStock;
         this.price = price;
+        this.status = true;
     }
 
     //constructor with parameters
     public Product(String name, int itemNumber, int inStock, double price){
-        this.status = true;
-        this.name = name;
         this.itemNumber = itemNumber;
+        this.name = name;
         this.QtyInStock = inStock;
         this.price = price;
+        this.status = true;
     }
     //all getters
-    public boolean isStatus(){ return status; }
     public String getName(){ return name; }
     public int getItemNumber(){ return itemNumber; }
     public int getQtyInStock(){ return QtyInStock; }
     public double getPrice(){ return price; }
+    public boolean isStatus(){ return status; }
 
     //all setters
     public void setStatus(boolean status){ this.status = status; }

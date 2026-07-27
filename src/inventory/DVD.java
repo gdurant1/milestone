@@ -15,5 +15,10 @@ public class DVD extends Product {
         this.ageRating = ageRating;
         this.filmStudio = filmStudio;
     }
+
+    // 2-c create getters
+
+
+    // 2-c create setters
     
 }
