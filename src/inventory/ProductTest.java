@@ -124,6 +124,49 @@ public class ProductTest {
         }
     }
 
+    // 5-e rename addToInventory to addCDToInventory
+    public static void addDVDToInventory(Product[] products, Scanner in){
+        String tempName;
+        int tempNumber;
+        int tempQty;
+        double tempPrice;
+        // 5-e add additional variables included with CD
+        String tempStudio;
+        int tempAgeRating;
+        int tempLength;
+
+        // 5-e update prompt
+        for (int i = 0; i < products.length; i++){
+            in.nextLine();
+
+            System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
+
+            System.out.println("DVD Name: ");
+            tempName = in.nextLine();
+
+            System.out.println("Film Studio Name: ");
+            tempStudio = in.nextLine();
+
+            System.out.println("Age Rating: ");
+            tempAgeRating = in.nextInt();
+
+            System.out.println("Length in minutes: ");
+            tempLength = in.nextInt();
+
+            System.out.println("Quantity of stock: ");
+            tempQty = in.nextInt();
+
+            System.out.println("Product Price: ");
+            tempPrice = in.nextInt();
+
+            System.out.println("Item Number: ");
+            tempNumber = in.nextInt();
+
+            // 5-e update product array
+            products[i] = new DVD(tempNumber, tempName, tempQty, tempPrice, tempLength, tempAgeRating, tempStudio);
+        }
+    }
+
     public static int getMenuOption(Scanner in){
         int menuChoice = -1;
 
