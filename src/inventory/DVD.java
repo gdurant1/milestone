@@ -36,7 +36,7 @@ public class DVD extends Product {
     }
 
     // #4-a override toString from product class
-    @Override
+
     public  String toString(){
         return  "Item Number      : " + getItemNumber() + "\n" +
                 "Name             : " + getName()+ "\n" +

@@ -49,7 +49,7 @@ public class ProductTest {
     }
 
     public static void displayInventory(Product[] products){
-        System.out.println("\n========== Inventory Added ==========");
+        System.out.println("\n========== Inventory ==========");
         for (int i = 0; i < products.length; i++){
             System.out.println(products[i]); }
     }
