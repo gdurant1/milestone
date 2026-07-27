@@ -17,8 +17,13 @@ public class DVD extends Product {
     }
 
     // 2-c create getters
-
+    public int getLengthMinutes(){ return lengthMinutes; }
+    public int getAgeRating(){ return ageRating; }
+    public String getFilmStudio(){ return filmStudio; }
 
     // 2-c create setters
+    public void setLengthMinutes(){}
+    public void setAgeRating(){}
+    public void setFilmStudio(){}
     
 }

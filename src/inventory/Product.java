@@ -25,18 +25,18 @@ public class Product {
         this.status = true;
     }
     //all getters
-    public String getName(){ return name; }
     public int getItemNumber(){ return itemNumber; }
+    public String getName(){ return name; }
     public int getQtyInStock(){ return QtyInStock; }
     public double getPrice(){ return price; }
     public boolean isStatus(){ return status; }
 
     //all setters
-    public void setStatus(boolean status){ this.status = status; }
-    public void setName(String name){ this.name = name; }
     public void setItemNumber(int itemNumber){ this.itemNumber = itemNumber; }
+    public void setName(String name){ this.name = name; }
     public void setQtyInStock(int qtyInStock) { this.QtyInStock = qtyInStock; }
     public void setPrice(double price) { this.price = price; }
+    public void setStatus(boolean status){ this.status = status; }
 
     public double getInventoryValue(){
         return this.price * this.QtyInStock;}
