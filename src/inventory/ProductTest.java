@@ -22,9 +22,7 @@ public class ProductTest {
             } while (menuChoice !=0);
 
             displayInventory(products);
-
             }
-
         in.close();
     } //end method main
 
@@ -63,7 +61,7 @@ public class ProductTest {
         double tempPrice;
 
         for (int i = 0; i < products.length; i++){
-            in.nextLine(); // 5-b clear buffer,
+            in.nextLine();
 
             System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
 
@@ -80,6 +78,49 @@ public class ProductTest {
             tempPrice= in.nextDouble();
 
             products[i] = new Product(tempName, tempNumber, tempQty, tempPrice);
+        }
+    }
+
+    // 5-a rename addToInventory to addCDToInventory
+    public static void addCDToInventory(Product[] products, Scanner in){
+        String tempName;
+        int tempNumber;
+        int tempQty;
+        double tempPrice;
+        // 5-b add additional variables included with CD
+        String tempArtist;
+        int tempSongs;
+        String tempLabel;
+
+        // 5-c update prompt
+        for (int i = 0; i < products.length; i++){
+            in.nextLine();
+
+            System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
+
+            System.out.println("CD Name: ");
+            tempName = in.nextLine();
+
+            System.out.println("Artist Name: ");
+            tempArtist = in.nextLine();
+
+            System.out.println("Record Label Name: ");
+            tempLabel = in.nextLine();
+
+            System.out.println("Number of Songs: ");
+            tempSongs = in.nextInt();
+
+            System.out.println("Quantity of stock: ");
+            tempQty = in.nextInt();
+
+            System.out.println("Product Price: ");
+            tempPrice = in.nextInt();
+
+            System.out.println("Item Number: ");
+            tempNumber = in.nextInt();
+
+            // 5-d update product array
+            products[i] = new CD(tempNumber, tempName, tempQty, tempPrice, tempArtist, tempSongs, tempLabel);
         }
     }
 
