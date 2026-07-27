@@ -1,7 +1,5 @@
 package inventory;
 
-import inventory.Product;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -222,7 +220,7 @@ public class ProductTest {
 
         productChoice = getProductNumber(products, in);
 
-        products[productChoice].setActive(false);
+        products[productChoice].setStatus(false);
         System.out.println("Product has been discontinued.");
     }
 

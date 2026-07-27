@@ -2,14 +2,14 @@ package inventory;
 
 public class Product {
     private int itemNumber; //user assigned item number
-    private boolean active = true; //bool for sales
     private String name;//for unit name
     private int QtyInStock;//keeps track of inventory
     private double price;//keeps track of unit price
+    private boolean status = true; //bool for sales
 
     //default constructor
     public Product() {
-        this.active = true;
+        this.status = true;
         this.name = name;
         this.itemNumber = itemNumber;
         this.QtyInStock = QtyInStock;
@@ -18,21 +18,21 @@ public class Product {
 
     //constructor with parameters
     public Product(String name, int itemNumber, int inStock, double price){
-        this.active = true;
+        this.status = true;
         this.name = name;
         this.itemNumber = itemNumber;
         this.QtyInStock = inStock;
         this.price = price;
     }
     //all getters
-    public boolean isActive(){ return active; }
+    public boolean isStatus(){ return status; }
     public String getName(){ return name; }
     public int getItemNumber(){ return itemNumber; }
     public int getQtyInStock(){ return QtyInStock; }
     public double getPrice(){ return price; }
 
     //all setters
-    public void setActive(boolean active){ this.active = active; }
+    public void setStatus(boolean status){ this.status = status; }
     public void setName(String name){ this.name = name; }
     public void setItemNumber(int itemNumber){ this.itemNumber = itemNumber; }
     public void setQtyInStock(int qtyInStock) { this.QtyInStock = qtyInStock; }
@@ -63,7 +63,7 @@ public class Product {
                 "Quantity in stock: " + this.QtyInStock + "\n" +
                 "Price            : " + this.price + "\n" +
                 "Stock Value      : " + this.getInventoryValue() + "\n" +
-                "Product Status   : " + (this.active ? "Active" : "Discontinued") + "\n";
+                "Product Status   : " + (this.status ? "Active" : "Discontinued") + "\n";
         //ternary operator to simplify boolean output
     }
 
