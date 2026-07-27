@@ -29,4 +29,17 @@ public class CD extends Product {
     public void setLabel(String label) {
         this.label = label; }
 
+    // 4-b ovveride toString() for CD
+    @Override
+    public  String toString(){
+        return  "Item Number      : " + getItemNumber() + "\n" +
+                "Name             : " + getName() + "\n" +
+                "Artist           : " + getArtist() +"\n" +
+                "Songs on Album   : " + getNumberOfSongs() +"\n" +
+                "Record Label     : " + getLabel() +"\n" +
+                "Quantity in stock: " + getQtyInStock() + "\n" +
+                "Price            : " + getPrice() + "\n" +
+                "Stock Value      : " + getInventoryValue() + "\n" +
+                "Product Status   : " + (isStatus() ? "Active" : "Discontinued") + "\n";
+    }
 }
