@@ -10,7 +10,7 @@ public class DVD extends Product {
     // 2-b constructor using super
     public DVD (int itemNumber, String name, int QtyInStock, double price,
                 int lengthMinutes, int ageRating, String filmStudio){
-        super(itemNumber, name, QtyInStock, price);
+        super(name, itemNumber, QtyInStock, price);
         this.lengthMinutes = lengthMinutes;
         this.ageRating = ageRating;
         this.filmStudio = filmStudio;

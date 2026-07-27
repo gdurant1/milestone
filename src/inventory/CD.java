@@ -10,7 +10,7 @@ public class CD extends Product {
     // 2-d constructor using super
     public CD (int itemNumber, String name, int QtyInStock, double price,
                 int artist, int numberOfSongs, String label){
-        super(itemNumber, name, QtyInStock, price);
+        super(name, itemNumber, QtyInStock, price);
         this.artist = artist;
         this.numberOfSongs = numberOfSongs;
         this.label = label;
