@@ -54,30 +54,33 @@ public class ProductTest {
             System.out.println(products[i]); }
     }
 
+    // 6 update addToInventory to include choice
     public static void addToInventory(Product[] products, Scanner in){
-        String tempName;
-        int tempNumber;
-        int tempQty;
-        double tempPrice;
+        // 6-a remove existing variables, replace with single stockChoice
+        int stockChoice = -1;
 
-        for (int i = 0; i < products.length; i++){
-            in.nextLine();
+        for(int i = 0; i < products.length; i++){
+            do {
+                try{
+                    // 6-b menu prompt
+                    System.out.println("\n1: CD\n2: DVD\nPlease enter the product type: ");
+                    stockChoice = in.nextInt();
 
-            System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
+                    // 6-c error message
+                    if (stockChoice < 1 || stockChoice > 2){
+                        System.out.println("Only numbers 1 or 2 allowed!");
+                    }
+                } catch (InputMismatchException e){
+                    System.out.println("Incorrect data type entered!\n");
+                    in.nextLine();
+                }
+            } while (stockChoice < 1 || stockChoice > 2); // 6-d
 
-            System.out.println("Name: ");
-            tempName = in.nextLine();
-
-            System.out.println("Item Number: ");
-            tempNumber = in.nextInt();
-
-            System.out.println("Quantity: ");
-            tempQty = in.nextInt();
-
-            System.out.println("Price: ");
-            tempPrice= in.nextDouble();
-
-            products[i] = new Product(tempName, tempNumber, tempQty, tempPrice);
+            if (stockChoice == 1){
+                addCDToInventory(products, in); }
+            else {
+                addDVDToInventory(products, in);
+            }
         }
     }
 
@@ -98,25 +101,25 @@ public class ProductTest {
 
             System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
 
-            System.out.println("CD Name: ");
+            System.out.println("Please enter the CD Name: ");
             tempName = in.nextLine();
 
-            System.out.println("Artist Name: ");
+            System.out.println("Please enter the Artist Name: ");
             tempArtist = in.nextLine();
 
-            System.out.println("Record Label Name: ");
+            System.out.println("Please enter Record Label Name: ");
             tempLabel = in.nextLine();
 
-            System.out.println("Number of Songs: ");
+            System.out.println("Please enter the Number of Songs: ");
             tempSongs = in.nextInt();
 
-            System.out.println("Quantity of stock: ");
+            System.out.println("Please enter Quantity of stock: ");
             tempQty = in.nextInt();
 
-            System.out.println("Product Price: ");
+            System.out.println("Please enter Product Price: ");
             tempPrice = in.nextInt();
 
-            System.out.println("Item Number: ");
+            System.out.println("Please enter Item Number: ");
             tempNumber = in.nextInt();
 
             // 5-d update product array
@@ -141,25 +144,25 @@ public class ProductTest {
 
             System.out.println("\n++++++++++ Enter Product " + ( i+1) + " Information ++++++++++");
 
-            System.out.println("DVD Name: ");
+            System.out.println("Please enter the DVD Name: ");
             tempName = in.nextLine();
 
-            System.out.println("Film Studio Name: ");
+            System.out.println("Please enter the Film Studio Name: ");
             tempStudio = in.nextLine();
 
-            System.out.println("Age Rating: ");
+            System.out.println("Please enter the Age Rating: ");
             tempAgeRating = in.nextInt();
 
-            System.out.println("Length in minutes: ");
+            System.out.println("Please enter the Length in minutes: ");
             tempLength = in.nextInt();
 
-            System.out.println("Quantity of stock: ");
+            System.out.println("Please enter Quantity of stock: ");
             tempQty = in.nextInt();
 
-            System.out.println("Product Price: ");
+            System.out.println("Please enter the Product Price: ");
             tempPrice = in.nextInt();
 
-            System.out.println("Item Number: ");
+            System.out.println("Please enter the Item Number: ");
             tempNumber = in.nextInt();
 
             // 5-e update product array
