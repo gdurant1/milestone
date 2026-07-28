@@ -6,6 +6,12 @@ Assigned Prompt: Walk through the overridden toString() method in the DVD class.
 Live Demonstration Required: Temporarily remove the @Override annotation from your DVD toString() method and show whether the program still compiles and runs correctly. Then add a DVD and display it to confirm the output is unchanged. Next, temporarily try accessing an inherited field directly by name inside the DVD toString() method instead of through its getter, and show whether it compiles. Explain what the result tells you about visibility and subclass access in your implementation. Restore all changes before ending your recording.
  */
 
+/*
+AI  use:  had issues with "products[i] = new DVD(tempNumber, tempName, tempQty, tempPrice, tempLength, tempAgeRating, tempStudio);" and similar error in constructor.
+          got a mismatched int/str error.  Checked variable types and they matched.  asked basic google ai to list causes of error when initializing and assigning are same data type.
+          Google explained error and listed several things to check.  Realized I had the data types out of order.  Error was gone after I rearranged order.
+ */
+
 package inventory;
 
 import inventory.CD;
