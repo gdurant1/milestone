@@ -8,7 +8,8 @@ Live Demonstration Required: Temporarily remove the @Override annotation from yo
 
 /*
 AI  use:  had issues with "products[i] = new DVD(tempNumber, tempName, tempQty, tempPrice, tempLength, tempAgeRating, tempStudio);" and similar error in constructor.
-          got a mismatched int/str error.  Checked variable types and they matched.  asked basic google ai to list causes of error when initializing and assigning are same data type.
+          got a mismatched int/str error.  Checked variable types and they matched names. Also checked for correct initialization, and syntax.
+          asked basic google ai to list causes of error when initializing and assigning are same data type.
           Google explained error and listed several things to check.  Realized I had the data types out of order.  Error was gone after I rearranged order.
  */
 
