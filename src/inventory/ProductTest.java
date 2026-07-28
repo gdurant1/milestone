@@ -1,4 +1,16 @@
+/*
+Student Name: Durant, Gunnar Michael
+Date: 27 July 2026
+Assigned Prompt: Walk through the overridden toString() method in the DVD class. Why is it necessary to override it rather than use the one in Product? Show whether your DVD subclass can directly access the inherited fields from Product, such as name or price, without using getter methods, and explain why or why not based on the visibility modifiers in your own code. Then explain what the @Override annotation does and what would happen if you removed it. Would the method still work, and why is the annotation still considered good practice?
+
+Live Demonstration Required: Temporarily remove the @Override annotation from your DVD toString() method and show whether the program still compiles and runs correctly. Then add a DVD and display it to confirm the output is unchanged. Next, temporarily try accessing an inherited field directly by name inside the DVD toString() method instead of through its getter, and show whether it compiles. Explain what the result tells you about visibility and subclass access in your implementation. Restore all changes before ending your recording.
+ */
+
 package inventory;
+
+import inventory.CD;
+import inventory.DVD;
+import inventory.Product;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
